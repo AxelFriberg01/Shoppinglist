@@ -41,15 +41,20 @@
                             @Html.DisplayFor(modelItem => item.OptionalQuantityInfo)
                         </td>
                         <td>
-                            @*@Html.ActionLink("Remove item", "Delete", new { /* id=item.PrimaryKey */ })*@
-                            <input type="button" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp" name="RemoveItem" />
+                            @Html.ActionLink("Remove item", "Remove", new { id=item.Id })
+
+                            @*<button asp-action="Remove" onclick="alert('Är du säker på att du vill ta bort')">Delete</button>*@
+                            @*<form asp-action="Remove"><input type="button" value="Remove item" name="Remove" /></form>*@
+
+
+                            @*<input type="button" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp" name="RemoveItem" />*@
 
                             @*<form asp-controller="Product" asp-action="Remove" method="post" id="filterForm">
-                                <input asp-for="Id" type="hidden" value="@item.Id" />
-                                <button type="submit" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp">
-                                </button></form>*@
+        <input asp-for="Id" type="hidden" value="@item.Id" />
+        <button type="submit" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp">
+        </button></form>*@
 
-                                @*<button asp-page-handler="Delete" asp-route-id="@item.ProductName" onclick="deleteRow()" class="btn btn-danger btn-sm">Delete</button>*@
+                            @*<button asp-page-handler="Delete" asp-route-id="@item.ProductName" onclick="deleteRow()" class="btn btn-danger btn-sm">Delete</button>*@
                         </td>
                     </tr>
                 }

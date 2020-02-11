@@ -1,0 +1,6 @@
+﻿App name: willys
+URL: www.willys.azurewebsites.net
+SQL Database: ShoppingCartDB
+Server name: willys.database.windows.net
+Server admin login: axel.friberg
+Password: ALH459yftIY439f568GAKUgiy2qa
