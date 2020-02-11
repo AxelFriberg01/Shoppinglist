@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ProductsIndexVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1></h1>
+<hr />
+
+<p>
+    <a asp-action="Create"><input type="button" value="Add Product" /></a>
+</p>
+@{
+    var listLength = Model.Count();
+    if (listLength > 0)
+    {
+        <table id="table" class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OptionalQuantityInfo)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" style="zoom:1.3; border:0px; padding:0px; margin:0px;" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OptionalQuantityInfo)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Remove item", "Delete", new { /* id=item.PrimaryKey */ })*@
+                            <input type="button" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp" name="RemoveItem" />
+
+                            @*<form asp-controller="Product" asp-action="Remove" method="post" id="filterForm">
+                                <input asp-for="Id" type="hidden" value="@item.Id" />
+                                <button type="submit" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp">
+                                </button></form>*@
+
+                                @*<button asp-page-handler="Delete" asp-route-id="@item.ProductName" onclick="deleteRow()" class="btn btn-danger btn-sm">Delete</button>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <script src="~/js/Index.js"></script>
+
+        @*Tack vare asp-action="Clear" kopplar knappen till metoden som tar clearar*@
+        <form asp-action="Clear"><input type="submit" value="Clear List" name="ClearList" /></form>
+
+
+
+    }
+}
