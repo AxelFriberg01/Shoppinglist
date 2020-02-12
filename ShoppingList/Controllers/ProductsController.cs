@@ -26,11 +26,11 @@ namespace ShoppingList.Controllers
             return View(service.GetProductsForIndex());
         }
 
+
         [HttpPost]
         [Route("remove")]
-        public IActionResult Remove(int? id)
+        public IActionResult Remove(int id)
         {
-            Console.WriteLine("test fail");
             List<Contents> itemList = new List<Contents>();
             itemList.RemoveAll(o => o.Id == id);
             return RedirectToAction(nameof(Index));

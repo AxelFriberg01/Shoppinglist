@@ -41,11 +41,17 @@
                             @Html.DisplayFor(modelItem => item.OptionalQuantityInfo)
                         </td>
                         <td>
-                            @Html.ActionLink("Remove item", "Remove", new { id=item.Id })
 
-                            @*<button asp-action="Remove" onclick="alert('Är du säker på att du vill ta bort')">Delete</button>*@
-                            @*<form asp-action="Remove"><input type="button" value="Remove item" name="Remove" /></form>*@
+                            @*Detta exempel anropar IActionResult Remove i ProductsController. Kolla så att item.Id skickas med genom att debugga funktionen. I kontrollern så vill du hämta all data
+                                från databasen (debugga även här o se om den hämtar alla entries) och därefter tar bort entry med Id som skickas med
+                                Läs mer här exempelvis: https://www.jerriepelser.com/blog/deleting-records-aspnet-core-ajax/
+                            *@
 
+                            <form asp-action="Remove" asp-route-id="@item.Id">
+                                <button type="submit" class="">
+                                    Delete
+                                </button>
+                            </form>
 
                             @*<input type="button" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp" name="RemoveItem" />*@
 
