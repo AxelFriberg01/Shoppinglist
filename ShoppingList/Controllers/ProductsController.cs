@@ -27,16 +27,29 @@ namespace ShoppingList.Controllers
         }
 
         [HttpPost]
-        [Route("remove")]
-        public IActionResult Remove(int? id)
+        [Route("index/remove/{id}")]
+        public IActionResult Remove(int id)
         {
-            Console.WriteLine("test fail");
-            List<Contents> itemList = new List<Contents>();
-            itemList.RemoveAll(o => o.Id == id);
-            return RedirectToAction(nameof(Index));
+                service.RemoveItem(id);
+
+                return Ok();
+            
+
+            //service.GetProductsForIndex().RemoveAll(o => o.Id == id);
+            //return RedirectToAction("Index");
+            //return NoContent();
+            
+            //Contents contents = dbo.
+            // .Include(i => i.ms_student)
+            // .Include(i => i.ms_user)
+            // .Where(i => i.ID == id)
+            // .Single();
+
+            //db.ms_person.Remove(ms_person);
+            //db.SaveChanges();
+            //return RedirectToAction("Index");
 
         }
-
 
         [HttpPost]
         [Route("clear")]

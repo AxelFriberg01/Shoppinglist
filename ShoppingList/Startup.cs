@@ -30,7 +30,7 @@ namespace ShoppingList
             var connString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ShoppingCartContext>(o => o.UseSqlServer(connString));
             services.AddTransient<ProductsService>();
-             
+
             services.AddControllersWithViews();
 
         }
@@ -45,6 +45,7 @@ namespace ShoppingList
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());

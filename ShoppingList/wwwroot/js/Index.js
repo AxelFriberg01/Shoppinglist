@@ -1,8 +1,17 @@
-﻿//var index, table = document.getElementById('table');
-//for (var i = 1; i < table.rows.length; i++) {
-//    table.rows[i].cells[3].onclick = function () {
-//        index = this.parentElement.rowIndex;
-//        table.deleteRow(index);
-//        console.log(index);
-//    };
+﻿
+//function deleteItem(form) {
+//    $(form).parents('li').remove();
 //}
+
+
+function removeItem(itemId, itemToRemoveId) {
+    console.log("test");
+    console.log(itemToRemoveId);
+    $.ajax({
+        url: `/index/remove/${itemId}`,
+        type: 'POST',
+        success: function (result) {
+            $("#" + itemToRemoveId).remove();
+        }
+    });
+}

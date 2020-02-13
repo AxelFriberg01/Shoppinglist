@@ -22,13 +22,14 @@ namespace ShoppingList.Models
 
         //static int id = 1;
 
-        //internal void RemoveRow()
-        //{
-        //    context.Contents.RemoveRange(context.Contents);
+        internal void RemoveItem(int id)
+        {
+            var item = context.Contents.SingleOrDefault(o => o.Id == id);
+            context.Remove(item);
 
-        //    context.SaveChanges();
-        //}
-       
+            context.SaveChanges();
+        }
+
         internal void ClearList()
         {
             context.Contents.RemoveRange(context.Contents);
@@ -82,6 +83,7 @@ namespace ShoppingList.Models
                 .ThenBy(o => o.ProductName)
                 .Select(o => new ProductsIndexVM
                 {
+                    Id = o.Id,
                     ProductName = o.ProductName,
                     OptionalQuantityInfo = o.OptionalQuantityInfo,
                 })
