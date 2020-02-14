@@ -48,29 +48,10 @@
                             <form asp-action="Remove">
                                 <input class="btn btn-danger" type="button" value="X" onclick="removeItem('@item.Id', '@($"itemToRemove{item.Id}")')" />
                             </form>
-
-                            @*<form asp-action="Remove" asp-route-id="@item.Id" data-ajax="true" data-ajax-success="deleteItem(this)">
-                        <button type="submit" class="btn btn-sm btn-danger d-none d-md-inline-block">
-                            Delete
-                        </button>
-                    </form>*@
-
-                            @*<button asp-action="Remove" onclick="alert('Är du säker på att du vill ta bort')">Delete</button>*@
-                            @*<form asp-action="Remove"><input type="button" value="Remove item" name="Remove" /></form>*@
-
-
-                            @*<input type="button" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp" name="RemoveItem" />*@
-
-                            @*<form asp-controller="Product" asp-action="Remove" method="post" id="filterForm">
-                    <input asp-for="Id" type="hidden" value="@item.Id" />
-                    <button type="submit" style="padding:0px; margin:0px" value="&nbsp &nbsp X &nbsp &nbsp">
-                    </button></form>*@
-
-                            @*<button asp-page-handler="Delete" asp-route-id="@item.ProductName" onclick="deleteRow()" class="btn btn-danger btn-sm">Delete</button>*@
                         </td>
                     </tr>
-                    }
-                </tbody>
+                }
+            </tbody>
         </table>
 
 

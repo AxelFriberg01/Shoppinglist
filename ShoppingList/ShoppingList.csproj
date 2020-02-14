@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
       <PrivateAssets>all</PrivateAssets>
@@ -12,7 +13,11 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-  </ItemGroup>
+
+    <!--Added the following after reading an article on https://dev.to/azure/develop-azure-functions-using-net-core-3-0-gcm-->
+    <!--<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.1.1" />-->
+    
+    </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\css\" />

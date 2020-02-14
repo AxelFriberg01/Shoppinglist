@@ -30,8 +30,7 @@ namespace ShoppingList
             var connString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ShoppingCartContext>(o => o.UseSqlServer(connString));
             services.AddTransient<ProductsService>();
-
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
         }
 
