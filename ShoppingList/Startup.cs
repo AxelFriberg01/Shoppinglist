@@ -14,6 +14,9 @@ using ShoppingList.Models.Entities;
 
 namespace ShoppingList
 {
+    
+    //Release branch
+
     public class Startup
     {
         private readonly IConfiguration configuration;
