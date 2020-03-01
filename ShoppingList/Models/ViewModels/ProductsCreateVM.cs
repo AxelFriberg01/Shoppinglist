@@ -10,11 +10,11 @@ namespace ShoppingList.Models.ViewModels
     public class ProductsCreateVM
     {
         [Display(Name = "Name of product")]
-        [Required(ErrorMessage = "Enter a product name")]
+        [Required(ErrorMessage = "Enter product name")]
         public string ProductName { get; set; }
 
-        [Display(Name = "Quantity info (optional)")]
-        public string OptionalQuantityInfo { get; set; }
+        [Display(Name = "Product info (optional)")]
+        public string OptionalProductInfo { get; set; }
 
         [Display(Name = "Section in store")]
         //[Required(ErrorMessage = "Enter in which section of the store the above product can be located")]

@@ -2,17 +2,21 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">*@
 
     @*Om man vill använda Bootstrap:*@
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*@
-    
+
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="icon" href="@Url.Content("~/images/favicon/icons8-shopping-cart-96.ico")" />
+    @RenderSection("styles", false)
 </head>
 
 <body>
-    <h1>Shopping List</h1>
+    <h1>Groceries</h1>
     <div>
         @RenderBody()
     </div>

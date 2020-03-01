@@ -52,6 +52,7 @@ namespace ShoppingList.Models
         //    new Product {Id = id++, ProductName = "Kyckling", OptionalQuantityInfo = "Hel kyckling", StoreSection = 5},
         //};
 
+
         internal ProductsCreateVM GetProductsForCreate()
         {
             var viewModel = new ProductsCreateVM
@@ -76,7 +77,7 @@ namespace ShoppingList.Models
         public ProductsIndexVM[] GetProductsForIndex()
         {
          
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("sv-SE");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("sv-SE");
 
             return context.Contents
                 .OrderBy(o => o.StoreSection)
@@ -96,7 +97,7 @@ namespace ShoppingList.Models
             context.Contents.Add(new Contents
             {
                 ProductName = viewmodel.ProductName,
-                OptionalQuantityInfo = viewmodel.OptionalQuantityInfo,
+                OptionalQuantityInfo = viewmodel.OptionalProductInfo,
                 StoreSection = viewmodel.SelectedStoreSection,
             });
 

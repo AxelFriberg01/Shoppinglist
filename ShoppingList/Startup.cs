@@ -30,7 +30,9 @@ namespace ShoppingList
             var connString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ShoppingCartContext>(o => o.UseSqlServer(connString));
             services.AddTransient<ProductsService>();
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            //services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddControllersWithViews();
+
 
         }
 
@@ -43,11 +45,16 @@ namespace ShoppingList
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseHttpsRedirection();
             app.UseRouting();
 
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+            //app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
