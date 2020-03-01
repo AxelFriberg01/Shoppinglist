@@ -292,27 +292,13 @@ a {
     border-radius: 4px;
     border: 1px solid #bbb;
     cursor: pointer;
-    box-sizing: border-box;
-
-    /*Inte möjligt att highlighta text*/
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+    box-sizing: border-box
 }
 
     .deletebutton:hover {
         background-color: #e81123;
         border: 1px solid #e81123;
-        color: #FFF;
-
-        /*Inte möjligt att highlighta text*/
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+        color: #FFF
     }
 
     .button:focus, .button:hover, button:focus, button:hover, input[type=button]:focus, input[type=button]:hover, input[type=reset]:focus, input[type=reset]:hover, input[type=submit]:focus, input[type=submit]:hover {

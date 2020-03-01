@@ -17,48 +17,50 @@
     var listLength = Model.Count();
     if (listLength > 0)
     {
-    <table id="table" class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.OptionalQuantityInfo)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
+        <table id="table" class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OptionalQuantityInfo)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
                 {
-            <tr id="@($"itemToRemove{item.Id}")">
-                <td>
-                    <input type="checkbox" style="zoom:1.5; border:0px; padding:0px; margin:0px;" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OptionalQuantityInfo)
-                </td>
-                <td>
-                    @*@if(Number of rows in list > 1)*@
-                    <form asp-action="Remove">
-                        <input class="btn deletebutton" type="deletebutton" margin="0" value="x" readonly onclick="removeItem('@item.Id', '@($"itemToRemove{item.Id}")')" />
-                    </form>
-                    @*@else
-                        <form asp-action="Clear"><input type="button" value="X" name="ClearList" /></form>*@
-                </td>
-            </tr>
+                    <tr id="@($"itemToRemove{item.Id}")">
+                        <td>
+                            <input type="checkbox" style="zoom:1.5; border:0px; padding:0px; margin:0px;" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OptionalQuantityInfo)
+                        </td>
+                        <td>
+                            @*@if(Number of rows in list > 1)*@
+                            <form asp-action="Remove">
+                                <input class="btn deletebutton" type="deletebutton" margin="0" value="x" onclick="removeItem('@item.Id', '@($"itemToRemove{item.Id}")')" />
+                            </form>
+                            @*@else
+                            <form asp-action="Clear"><input type="button" value="X" name="ClearList" /></form>*@
+                        </td>
+                    </tr>
                 }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <br />
-    @*Tack vare asp-action="Clear" kopplar knappen till metoden som tar clearar*@
-    <form asp-action="Clear"><input type="submit" name="ClearList" value="Clear List" /></form>
+        <br/>
+        @*Tack vare asp-action="Clear" kopplar knappen till metoden som tar clearar*@
+        <form asp-action="Clear"><input type="submit" value="Clear List" name="ClearList" /></form>
+
+
 
     }
 }
