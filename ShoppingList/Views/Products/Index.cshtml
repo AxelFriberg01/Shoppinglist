@@ -46,7 +46,7 @@
                         <td>
                             @*@if(Number of rows in list > 1)*@
                             <form asp-action="Remove">
-                                <input class="btn deletebutton" type="deletebutton" margin="0" value="x" onclick="removeItem('@item.Id', '@($"itemToRemove{item.Id}")')" />
+                                <input class="btn deletebutton" type="deletebutton" margin="0" value="x" readonly="readonly" onclick="removeItem('@item.Id', '@($"itemToRemove{item.Id}")')" />
                             </form>
                             @*@else
                             <form asp-action="Clear"><input type="button" value="X" name="ClearList" /></form>*@

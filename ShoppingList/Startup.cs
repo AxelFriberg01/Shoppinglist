@@ -37,11 +37,13 @@ namespace ShoppingList
             services.AddTransient<ProductsService>();
             //services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            services.AddControllersWithViews(o =>
-            {
-                o.Filters.Add(
-                    new AutoValidateAntiforgeryTokenAttribute());
-            });
+            services.AddControllersWithViews(
+            //    o =>
+            //{
+            //    o.Filters.Add(
+            //        new AutoValidateAntiforgeryTokenAttribute());
+            //}
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
