@@ -1,0 +1,10 @@
+Server Name: willys.database.windows.net
+server admin login: axel.friberg
+Password: kbACVjgvtuCH6JK2gh73coBUIG49xHJew
+
+
+C:\Users\axelf\AppData\Roaming\Microsoft\UserSecrets\b2397fcc-afe4-47df-861d-9dfe3d3fa2e9\secrets.json
+
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=tcp:willys.database.windows.net,1433;Initial Catalog=ShoppingCart;User Id=axel.friberg@willys.database.windows.net;Password=kbACVjgvtuCH6JK2gh73coBUIG49xHJew;"
+  }
